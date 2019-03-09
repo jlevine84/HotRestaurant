@@ -8,6 +8,7 @@
     <title>Booking Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./styles.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
@@ -16,9 +17,10 @@
 <body>
     <div class="jumbotron">
         <div class="text-center">
-            <h1 class="display-4">Hot Restaurant</h1>
+            <h1>Hot Restaurant</h1>
             <hr class="my-4">
             <h2>Make Your Reservation</h2>
+            <br>
             <a class="btn btn-primary btn-lg" href="#" role="button">View Tables</a>
             <a class="btn btn-primary btn-lg" href="#" role="button">Home</a>
         </div>
@@ -37,12 +39,18 @@
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
         </div>
-        <div class="form-group form-check">
-            <input type="id" class="form-check-input" id="uniqueId">
-            <label class="form-check-label" for="uniqueId"></label>
+        <div class="form-group">
+            <label for="uniqueId">Unique Id</label>
+            <input type="id" class="form-control" id="id">
         </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
+    <div class="card-footer">
+        <a href="#" class="stretched-link">API Table Link</a>
+        <a href="#" class="stretched-link">API Wait List</a>
+    </div>
 
 </body>
 
