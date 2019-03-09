@@ -40,15 +40,15 @@
             <input type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
         </div>
         <div class="form-group">
-            <label class="form-check-label" for="uniqueId">ID</label>
-            <input type="text" class="form-check-input" id="uniqueId" placeholder="Unique Id">
+            <label for="uniqueID">Unique Id </label>
+            <input type="text" class="form-control" id="uniqueID" placeholder="Unique Id">
         </div>
         <button type="submit" id="submit" class="btn btn-primary">Submit</button>
     </form>
 
     <script>
-        $("form").submit(function(event) {
-        event.preventDefault();
+        $("form").submit(function (event) {
+            event.preventDefault();
 
         var newBooking = {
         name: $("#name").val().trim(),
@@ -58,25 +58,22 @@
         };
 
 
-        $.post("../api/reservations", newBooking,
-        function(data) {
+            $.post("../api/reservations", newBooking,
+                function (data) {
 
 
-            if (data) {
-            alert("Yay! You are officially booked!");
-            }
+                    if (data) {
+                        alert("Yay! You are officially booked!");
+                    } else {
+                        alert("Sorry you are on the wait list");
+                    }
 
+                    $("#name").val("");
+                    $("#phoneNumber").val("");
+                    $("#email").val("");
+                    $("#uniqueId").val("");
 
-            else {
-            alert("Sorry you are on the wait list");
-            }
-
-            $("#name").val("");
-            $("#phoneNumber").val("");
-            $("#email").val("");
-            $("#uniqueId").val("");
-
-        });
+                });
 
         });
     </script>
