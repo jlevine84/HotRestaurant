@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <div class="card">
+    <div class="card" id="reservations">
         <div class="card-header">
             Current Reservation
         </div>
@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <div class="card">
+    <div class="card" id="waiting">
         <div class="card-header">
             Waiting List
         </div>
@@ -58,7 +58,29 @@
     </div>
 
     <script>
+        $.get("../api/reservations").then((data)=>{
+            for(i = 0; i < data.current.length; i++) {
+                let newCardBody = $("<div>").addClass("card-body")
+                let cardTitle = $("<h5>").addClass("card-title").text("The following person has a reservation:")
+                let uniqueId = $("<ul>").text(data.current[i].id)
+                let name = $("<ul>").text(data.current[i].name)
+                let email = $("<ul>").text(data.current[i].email)
+                let phoneNumber = $("<ul>").text(data.current[i].phoneNumber)
+                newCardBody.append(cardTitle, uniqueId, name, email, phoneNumber)
+                $("#reservations").append(newCardBody)
+            }
 
+            for(i = 0; i < data.waiting.length; i++) {
+                let newCardBody = $("<div>").addClass("card-body")
+                let cardTitle = $("<h5>").addClass("card-title").text("The following person is on the wait list:")
+                let uniqueId = $("<ul>").text(data.waiting[i].id)
+                let name = $("<ul>").text(data.waiting[i].name)
+                let email = $("<ul>").text(data.waiting[i].email)
+                let phoneNumber = $("<ul>").text(data.waiting[i].phoneNumber)
+                newCardBody.append(cardTitle, uniqueId, name, email, phoneNumber)
+                $("#waiting").append(newCardBody)
+            }
+        })
 
     </script>
 
