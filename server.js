@@ -5,7 +5,7 @@ const htmlRoute = require("./routing/htmlRouting")
 const apiRoute = require("./routing/apiRouting")
 
 const server = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 htmlRoute(server, path)
 apiRoute(server, express, reservations)
