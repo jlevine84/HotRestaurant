@@ -1,0 +1,23 @@
+{
+  "name": "hotrestaurant",
+  "version": "1.0.0",
+  "description": "Heroku hosted restaurant booking application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlevine84/HotRestaurant.git"
+  },
+  "author": "project2team4",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlevine84/HotRestaurant/issues"
+  },
+  "homepage": "https://github.com/jlevine84/HotRestaurant#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
